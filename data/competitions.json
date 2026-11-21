@@ -24,7 +24,8 @@
       "th": "สาขาพลังงาน วัสดุ และเคมีชีวภาพ ระดับอาชีวศึกษา งานสัปดาห์วิทยาศาสตร์แห่งชาติ ภาคตะวันออก ครั้งที่ 43 ผลงาน: ระบบตรวจสอบสัญญาณไฟจราจรชำรุดด้วย AI ต่อยอดจากผลงานของรุ่นพี่ เกียรติบัตรที่แสดงเป็นเกียรติบัตรผู้เข้าร่วม ส่วนผลรางวัลชนะเลิศดูได้จากหน้าประกาศผลอย่างเป็นทางการของผู้จัด"
     },
     "story": {
-      "th": "ผลงานชิ้นนี้เป็นผลงานจากรุ่นก่อนๆ ของรุ่นพี่ที่วิทยาลัยเทคนิคสัตหีบ พวกผมได้ทำการปรับปรุงและต่อยอดจากผลงานของพี่ๆ ที่ได้ทำไว้แล้วเรียบร้อย มีเพียงแค่เพิ่มฟีเจอร์ พัฒนาการตรวจจับของ AI และปรับปรุง UX/UI"
+      "th": "ผลงานชิ้นนี้เป็นผลงานจากรุ่นก่อนๆ ของรุ่นพี่ที่วิทยาลัยเทคนิคสัตหีบ พวกผมได้ทำการปรับปรุงและต่อยอดจากผลงานของพี่ๆ ที่ได้ทำไว้แล้วเรียบร้อย มีเพียงแค่เพิ่มฟีเจอร์ พัฒนาการตรวจจับของ AI และปรับปรุง UX/UI",
+      "en": "This project is a continuation of work by earlier cohorts of seniors at Sattahip Technical College. We improved and built on what they had done, adding features, improving the AI detection and refining the UX/UI."
     },
     "link": {
       "url": "https://science.buu.ac.th/sciweek_comp/award.php?cgen=161",
@@ -60,7 +61,8 @@
       "th": "ทักษะเทคโนโลยีสารสนเทศด้านโปรแกรมและเครือข่ายด้วยกระบวนการ DevOps ณ วิทยาลัยเทคนิคชลบุรี ส่วนของผมเป็นการเขียน Back-end และเปิดใช้ GitLab ด้วย docker-compose ให้กับทีม"
     },
     "story": {
-      "th": "การแข่งขันครั้งนี้ได้สอนผมหลายอย่างเกี่ยวกับการแบ่งหน้าที่และการทำงานเป็นทีม ก่อนหน้าการแข่งขัน ผมกับเพื่อนๆ ในทีมมีเวลา 1 เดือนในการฝึกซ้อม และการแข่งขันนี้เป็นการแข่งขันแบบ Offline ที่มีการแบ่งหน้าที่กัน"
+      "th": "การแข่งขันครั้งนี้ได้สอนผมหลายอย่างเกี่ยวกับการแบ่งหน้าที่และการทำงานเป็นทีม ก่อนหน้าการแข่งขัน ผมกับเพื่อนๆ ในทีมมีเวลา 1 เดือนในการฝึกซ้อม และการแข่งขันนี้เป็นการแข่งขันแบบ Offline ที่มีการแบ่งหน้าที่กัน",
+      "en": "This competition taught me a lot about dividing responsibilities and working as a team. Before it, my teammates and I had one month to practice. It was an offline competition where each of us had a defined role."
     },
     "link": {
       "url": "https://www.facebook.com/story.php?story_fbid=1732654875536759&id=100063767881647",
@@ -95,7 +97,8 @@
       "th": "จัดโดยสำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช.) ร่วมกับ บริษัท หัวเว่ย เทคโนโลยี่ (ประเทศไทย) จำกัด รอบคัดเลือกออนไลน์ ภาคตะวันออกและภาคกลาง เกียรติบัตรที่แสดงเป็นเกียรติบัตรผู้เข้าร่วม ส่วนอันดับอ้างอิงจากตารางคะแนนของผู้จัด"
     },
     "story": {
-      "th": "ในรายการแข่งขันนี้ได้ให้ความรู้แก่ผมในเรื่องการทำงานเป็นทีมและ Cybersecurity คร่าวๆ เป็นการแข่งขัน CTF ที่มีหมวดหมู่ต่างๆ ซึ่งผมกับเพื่อนทั้งหมด 3 คนในทีมก็แบ่งหน้าที่กัน ผมทำส่วน Reverse Engineering กับ Forensics"
+      "th": "ในรายการแข่งขันนี้ได้ให้ความรู้แก่ผมในเรื่องการทำงานเป็นทีมและ Cybersecurity คร่าวๆ เป็นการแข่งขัน CTF ที่มีหมวดหมู่ต่างๆ ซึ่งผมกับเพื่อนทั้งหมด 3 คนในทีมก็แบ่งหน้าที่กัน ผมทำส่วน Reverse Engineering กับ Forensics",
+      "en": "This competition gave me a first look at cybersecurity and showed me what teamwork involves. It was a CTF with several challenge categories. The three of us on the team split the work, and I took Reverse Engineering and Forensics."
     },
     "link": {
       "url": "https://member.ctfad.live/index/Tournament_List_View.html?scode=BWFHQDZYNH&t=Thailand+Cyber+Top+Talent+2025+-+JUNIOR",

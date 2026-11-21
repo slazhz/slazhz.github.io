@@ -27,7 +27,8 @@
       "th": "ทำแบบฝึกหัดครบ 9 ชุด และโปรเจกต์จบ 1 ชิ้น"
     },
     "story": {
-      "th": "เป็นก้าวแรกของผมที่ดึงผมให้มีความสนใจด้านโปรแกรมมิ่งและทำให้ผมเข้าใจพื้นฐานของการคิดอย่างมีระบบ"
+      "th": "เป็นก้าวแรกของผมที่ดึงผมให้มีความสนใจด้านโปรแกรมมิ่งและทำให้ผมเข้าใจพื้นฐานของการคิดอย่างมีระบบ",
+      "en": "It was my first step into programming. It drew me in, and it helped me understand the basics of thinking systematically."
     },
     "link": {
       "url": "https://cs50.harvard.edu/certificates/23bdf2c6-bb30-42b3-ad90-2068db36b7ac",
@@ -65,7 +66,8 @@
       "th": "ผ่านเกณฑ์การประเมินในระดับปัญญาประดิษฐ์ขั้นต้น (Basic AI)"
     },
     "story": {
-      "th": "เป็นการแข่งขันเล็กๆ ที่ผมกับเพื่อน 3 คนรวมตัวกันไปแข่งเองที่กรุงเทพฯ ภายในงานจะอบรมวิธีการ Prompt AI หลังจากนั้นจะให้บททดสอบมาใน Kaggle และผมกับเพื่อนก็ช่วยกันแก้ไขปัญหา"
+      "th": "เป็นการแข่งขันเล็กๆ ที่ผมกับเพื่อน 3 คนรวมตัวกันไปแข่งเองที่กรุงเทพฯ ภายในงานจะอบรมวิธีการ Prompt AI หลังจากนั้นจะให้บททดสอบมาใน Kaggle และผมกับเพื่อนก็ช่วยกันแก้ไขปัญหา",
+      "en": "A small competition that my friends and I travelled to Bangkok to enter on our own. The event trained us in prompting AI and then gave us a challenge on Kaggle, which we solved together."
     }
   },
   {
