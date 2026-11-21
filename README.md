@@ -34,7 +34,7 @@ Live at **https://slazhz.github.io**
 
 The job in `.github/workflows/update-steam-stats.yml` runs every hour (GitHub can start it a few minutes late) and fetches the visualizer's public Steam Workshop numbers. It only commits when a number actually changed, so the repo history stays quiet.
 
-- **On the page:** the numbers count up, with "Last change: 3 hours ago" under them (it says *last change*, not *live*, because the file only changes when a number does) and, once a week of history exists, "+N new subscribers this week". That trend uses lifetime subscribers, which never go down, so it can't hide people who unsubscribed.
+- **On the page:** the numbers count up, with "Last change: 3 hours ago" under them (it says *last change*, not *live*, because the file only changes when a number does) and "+N new subscribers this week". Until a full week of history exists it says "since <date>" instead, so it never overstates. That trend uses lifetime subscribers, which never go down, so it can't hide people who unsubscribed.
 - **Run it now:** *Actions → Update Steam stats → Run workflow*.
 - **If it ever stops:** GitHub pauses scheduled jobs in a repo with no activity for 60 days. If the numbers never change for that long, open the Actions tab and re-enable it, or run it once by hand.
 

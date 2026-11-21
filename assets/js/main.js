@@ -34,18 +34,30 @@
     if (secs < 48 * 3600) return rtf.format(-Math.round(secs / 3600), 'hour');
     return rtf.format(-Math.round(secs / 86400), 'day');
   }
-  function newThisWeek(data, history) {
-    // lifetime_subscriptions only goes up, so this can't hide people who unsubscribed
-    if (!Array.isArray(history) || typeof data.lifetime_subscriptions !== 'number') return 0;
-    var weekAgo = Date.now() - 7 * 86400000, base = null;
+  function newSubscribers(data, history) {
+    // lifetime_subscriptions only goes up, so this can't hide people who unsubscribed.
+    // Compares against the newest point that is at least a week old. Until the history is that
+    // old, it uses the earliest point and says "since <date>", so the label never overstates.
+    if (!Array.isArray(history) || typeof data.lifetime_subscriptions !== 'number') return null;
+    var weekAgo = Date.now() - 7 * 86400000, base = null, first = null;
     history.forEach(function (p) {
-      if (new Date(p.t).getTime() <= weekAgo && typeof p.lifetime_subscriptions === 'number') base = p;
+      if (typeof p.lifetime_subscriptions !== 'number' || isNaN(new Date(p.t).getTime())) return;
+      if (!first) first = p;
+      if (new Date(p.t).getTime() <= weekAgo) base = p;
     });
-    return base ? data.lifetime_subscriptions - base.lifetime_subscriptions : 0;
+    var from = base || first;
+    if (!from) return null;
+    var n = data.lifetime_subscriptions - from.lifetime_subscriptions;
+    return n > 0 ? { n: n, week: !!base, since: new Date(from.t) } : null;
   }
   function showMeta(data, history) {
-    var parts = [], n = newThisWeek(data, history), when = data.updated ? ago(data.updated) : '';
-    if (n > 0) parts.push(lang === 'th' ? 'สมาชิกใหม่ +' + n.toLocaleString(locale) + ' ใน 7 วันที่ผ่านมา' : '+' + n.toLocaleString(locale) + ' new subscribers this week');
+    var parts = [], grew = newSubscribers(data, history), when = data.updated ? ago(data.updated) : '';
+    if (grew) {
+      var num = grew.n.toLocaleString(locale);
+      var day = grew.since.toLocaleDateString(locale, { day: 'numeric', month: 'short' });
+      if (lang === 'th') parts.push(grew.week ? 'สมาชิกใหม่ +' + num + ' ใน 7 วันที่ผ่านมา' : 'สมาชิกใหม่ +' + num + ' ตั้งแต่ ' + day);
+      else parts.push('+' + num + ' new subscribers ' + (grew.week ? 'this week' : 'since ' + day));
+    }
     if (when) parts.push((lang === 'th' ? 'เปลี่ยนล่าสุด ' : 'Last change: ') + when);
     document.querySelectorAll('[data-steam-meta]').forEach(function (el) { el.textContent = parts.join(' · '); });
   }
