@@ -35,6 +35,13 @@ const image = (img, where) => {
   need(existsSync(join(ROOT, img.src)), `${where}: image file not found: ${img.src}`);
   need(Number.isInteger(img.width) && Number.isInteger(img.height), `${where}: image needs integer width and height`);
 };
+const checkStory = (c, where) => {   // optional; each language that is given must be real text
+  if (!c.story) return;
+  for (const l of LANGS) {
+    const s = c.story[l];
+    need(s === undefined || (typeof s === 'string' && s.trim() !== '' && s.length <= 1200), `${where}: story.${l} must be non-empty text (max 1200 characters)`);
+  }
+};
 const unique = (list, name) => {
   const seen = new Set();
   for (const it of list) { need(it.id && !seen.has(it.id), `${name}: duplicate or missing id "${it.id}"`); seen.add(it.id); }
@@ -49,6 +56,7 @@ for (const c of certificates) {
   image(c.image, w); need(['contain', 'cover'].includes(c.image?.fit), `${w}: image.fit must be contain or cover`);
   need(Array.isArray(c.tags), `${w}: tags must be a list`);
   ['alt', 'title', 'meta', 'desc'].forEach((k) => text(c[k], `${w} ${k}`));
+  checkStory(c, w);
   if (c.link) {   // optional verification link, e.g. the issuer's certificate page
     need(typeof c.link.url === 'string' && /^https:\/\/[^\s"<>]+$/.test(c.link.url), `${w}: link.url must be an https:// address`);
     text(c.link.label, `${w} link label`);
@@ -58,6 +66,7 @@ for (const c of competitions) {
   const w = `competition "${c.id}"`;
   image(c.image, w); need(['contain', 'cover'].includes(c.image?.fit), `${w}: image.fit must be contain or cover`);
   ['alt', 'when', 'title', 'desc'].forEach((k) => text(c[k], `${w} ${k}`));
+  checkStory(c, w);
   if (c.link) {   // optional evidence link, e.g. the organizer's results page
     need(typeof c.link.url === 'string' && /^https:\/\/[^\s"<>]+$/.test(c.link.url), `${w}: link.url must be an https:// address`);
     text(c.link.label, `${w} link label`);
@@ -79,18 +88,25 @@ if (problems.length) {
 // ---- templates (indentation matches the hand-written pages) ----
 const pad = (n, s) => s.split('\n').map((l) => (l ? ' '.repeat(n) + l : l)).join('\n');
 
+// Optional personal note under a card, folded away so the cards stay compact. A language with no
+// story simply shows no fold-out, so the Thai text can go live before its English translation.
+const STORY_LABEL = { en: 'My story', th: 'เรื่องราวของผม' };
+const storyHtml = (c, lang) => (c.story && c.story[lang]
+  ? `\n  <details class="story">\n    <summary>${STORY_LABEL[lang]}</summary>\n    <p>${esc(c.story[lang])}</p>\n  </details>`
+  : '');
+
 const certificateHtml = (c, lang, pre) => `<div class="training" data-tags="${attr(c.tags.join(' '))}">
   <img class="${c.image.fit}" src="${pre}${attr(c.image.src)}" width="${c.image.width}" height="${c.image.height}" loading="lazy" decoding="async" alt="${attr(c.alt[lang])}">
   <strong>${esc(c.title[lang])}</strong>
   <span class="mono">${esc(c.meta[lang])}</span>
-  <span>${esc(c.desc[lang])}</span>${c.link ? `\n  <a class="award-link" href="${attr(c.link.url)}" rel="noopener noreferrer">${esc(c.link.label[lang])}</a>` : ''}
+  <span>${esc(c.desc[lang])}</span>${storyHtml(c, lang)}${c.link ? `\n  <a class="award-link" href="${attr(c.link.url)}" rel="noopener noreferrer">${esc(c.link.label[lang])}</a>` : ''}
 </div>`;
 
 const competitionHtml = (c, lang, pre) => `<div class="card award">
   <img class="${c.image.fit}" src="${pre}${attr(c.image.src)}" width="${c.image.width}" height="${c.image.height}" loading="lazy" decoding="async" alt="${attr(c.alt[lang])}"${c.image.style ? ` style="${attr(c.image.style)}"` : ''}>
   <span class="award-when">${esc(c.when[lang])}</span>
   <h3>${esc(c.title[lang])}</h3>
-  <p>${esc(c.desc[lang])}</p>${c.link ? `\n  <a class="award-link" href="${attr(c.link.url)}" rel="noopener noreferrer">${esc(c.link.label[lang])}</a>` : ''}
+  <p>${esc(c.desc[lang])}</p>${storyHtml(c, lang)}${c.link ? `\n  <a class="award-link" href="${attr(c.link.url)}" rel="noopener noreferrer">${esc(c.link.label[lang])}</a>` : ''}
 </div>`;
 
 const mediaImg = (m, lang, pre) =>

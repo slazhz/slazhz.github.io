@@ -258,6 +258,8 @@ html[lang="th"] .project-title { line-height: 1.35; }
 html[lang="th"] .award h3 { line-height: 1.5; }
 .award p { margin: 0; font-size: 15px; color: var(--text-2); }
 .award-link { font-family: var(--font-mono); font-size: 13px; font-weight: 500; margin-top: auto; }
+.story summary { cursor: pointer; font-family: var(--font-mono); font-size: 13px; font-weight: 500; color: var(--blue-ink); }
+.story p, .award .story p { margin: 8px 0 0; font-size: 14px; line-height: 1.5; color: var(--text-2); }
 
 /* ---------- Skills ---------- */
 .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
