@@ -1,0 +1,253 @@
+[
+  {
+    "id": "p-amv",
+    "dark": true,
+    "media": [
+      {
+        "src": "assets/img/visualizer.gif",
+        "width": 400,
+        "height": 400,
+        "lazy": false,
+        "alt": {
+          "en": "The visualizer playing a song, drawn as live ASCII art with audio bars",
+          "th": "วอลเปเปอร์ขณะเล่นเพลง แสดงเป็นภาพ ASCII แบบเรียลไทม์"
+        },
+        "style": "aspect-ratio: 1 / 1; max-height: 420px; object-fit: contain; background: #0A0F1E"
+      },
+      {
+        "src": "assets/img/charsets.jpg",
+        "width": 1200,
+        "height": 614,
+        "lazy": true,
+        "alt": {
+          "en": "The same picture drawn with six character sets",
+          "th": "ภาพเดียวกันวาดด้วยชุดตัวอักษร 6 แบบ"
+        }
+      },
+      {
+        "src": "assets/img/bars.jpg",
+        "width": 1200,
+        "height": 528,
+        "lazy": true,
+        "alt": {
+          "en": "Six audio bar presets",
+          "th": "แถบเสียง 6 รูปแบบ"
+        }
+      }
+    ],
+    "tags": [
+      {
+        "text": {
+          "en": "Solo project",
+          "th": "ผลงานเดี่ยว"
+        }
+      },
+      {
+        "text": {
+          "en": "Live on Steam Workshop",
+          "th": "เผยแพร่บน Steam Workshop"
+        }
+      },
+      {
+        "text": {
+          "en": "Web version",
+          "th": "มีเวอร์ชันเว็บ"
+        }
+      },
+      {
+        "text": {
+          "en": "Open source",
+          "th": "โอเพนซอร์ส"
+        }
+      }
+    ],
+    "title": {
+      "en": "ASCII Music Visualizer",
+      "th": "ASCII Music Visualizer"
+    },
+    "desc": {
+      "en": "A Wallpaper Engine wallpaper that turns whatever you're listening to into live ASCII art. A WebGL shader redraws the album cover as characters in real time, with audio-reactive bars, a spinning cover that flips to show the tracklist, and song titles that work in Thai too. Anyone can subscribe on Steam Workshop, try the web version in the browser, or read the full source on GitHub.",
+      "th": "วอลเปเปอร์สำหรับ Wallpaper Engine ที่เปลี่ยนเพลงที่กำลังฟังให้กลายเป็นภาพ ASCII แบบเรียลไทม์ ใช้ WebGL shader วาดปกอัลบั้มเป็นตัวอักษร มีแถบเสียงที่ขยับตามเพลง ปกที่หมุนพลิกดูรายชื่อเพลงได้ และชื่อเพลงที่รองรับภาษาไทย ใครก็สามารถกดติดตามบน Steam Workshop ลองใช้เวอร์ชันเว็บบนเบราว์เซอร์ หรือดูซอร์สโค้ดทั้งหมดบน GitHub"
+    },
+    "facts": [
+      {
+        "label": {
+          "en": "My role",
+          "th": "บทบาท"
+        },
+        "value": {
+          "en": "Design, development, publishing",
+          "th": "ออกแบบ พัฒนา และเผยแพร่"
+        }
+      },
+      {
+        "label": {
+          "en": "Built with",
+          "th": "เครื่องมือ"
+        },
+        "value": {
+          "en": "JavaScript, WebGL, HTML/CSS, Node.js, Wallpaper Engine",
+          "th": "JavaScript, WebGL, HTML/CSS, Node.js, Wallpaper Engine"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "steam": "subscriptions",
+        "label": {
+          "en": "Steam subscribers",
+          "th": "ผู้ติดตามบน Steam"
+        }
+      },
+      {
+        "steam": "favorited",
+        "label": {
+          "en": "Steam favorites",
+          "th": "รายการโปรดบน Steam"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "label": {
+          "en": "Try it in your browser",
+          "th": "ลองใช้บนเบราว์เซอร์"
+        },
+        "href": "#web-demo",
+        "primary": true
+      },
+      {
+        "label": {
+          "en": "Steam Workshop",
+          "th": "Steam Workshop"
+        },
+        "href": "https://steamcommunity.com/sharedfiles/filedetails/?id=3840312660"
+      },
+      {
+        "label": {
+          "en": "GitHub",
+          "th": "GitHub"
+        },
+        "href": "https://github.com/slazhz/ascii-music-visualizer"
+      }
+    ],
+    "demo": {
+      "title": {
+        "en": "ASCII Music Visualizer, web version",
+        "th": "ASCII Music Visualizer เวอร์ชันเว็บ"
+      },
+      "fullUrl": "https://slazhz.github.io/ascii-music-visualizer/",
+      "openLabel": {
+        "en": "Open full screen",
+        "th": "เปิดเต็มจอ"
+      },
+      "src": "https://slazhz.github.io/ascii-music-visualizer/wallpaper/",
+      "stageTitle": {
+        "en": "ASCII Music Visualizer web demo",
+        "th": "เดโม ASCII Music Visualizer บนเว็บ"
+      },
+      "startLabel": {
+        "en": "Start the demo",
+        "th": "เริ่มเดโม"
+      },
+      "note": {
+        "en": "Plays a built-in demo song. You can also play your own music file or use your microphone. Nothing is uploaded.",
+        "th": "เล่นเพลงเดโมในตัว หรือเปิดไฟล์เพลงของคุณเอง หรือใช้ไมโครโฟนก็ได้ ไม่มีการอัปโหลดไฟล์ใด ๆ"
+      }
+    }
+  },
+  {
+    "id": "p-traffic",
+    "dark": false,
+    "media": [
+      {
+        "src": "assets/img/traffic-booth.jpg",
+        "width": 1280,
+        "height": 960,
+        "lazy": true,
+        "alt": {
+          "en": "Presenting the project to visitors at the competition booth",
+          "th": "นำเสนอผลงานต่อผู้เข้าชมที่บูธการแข่งขัน"
+        },
+        "style": "height: 300px"
+      },
+      {
+        "src": "assets/img/traffic-laptop.jpg",
+        "width": 1280,
+        "height": 720,
+        "lazy": true,
+        "alt": {
+          "en": "The detection system running on a laptop at the booth",
+          "th": "ระบบตรวจจับทำงานบนโน้ตบุ๊กที่บูธ"
+        },
+        "style": "height: 170px"
+      },
+      {
+        "src": "assets/img/traffic-award.jpg",
+        "width": 760,
+        "height": 761,
+        "lazy": true,
+        "alt": {
+          "en": "The team receiving first place at National Science Week",
+          "th": "ทีมรับรางวัลชนะเลิศ งานสัปดาห์วิทยาศาสตร์แห่งชาติ"
+        },
+        "style": "height: 170px; object-position: center 45%"
+      }
+    ],
+    "tags": [
+      {
+        "text": {
+          "en": "1st place · National Science Week 2026",
+          "th": "รางวัลชนะเลิศ · สัปดาห์วิทยาศาสตร์ฯ 2569"
+        },
+        "award": true
+      },
+      {
+        "text": {
+          "en": "AI · Computer vision",
+          "th": "AI · Computer Vision"
+        }
+      }
+    ],
+    "title": {
+      "en": "AI Traffic Light Fault Detection System",
+      "th": "ระบบตรวจสอบสัญญาณไฟจราจรชำรุดด้วย AI"
+    },
+    "desc": {
+      "en": "Broken traffic lights often go unnoticed until someone reports them. This solar-powered pole box uses a camera and AI to spot faults and alert technicians on a map and a mobile app.",
+      "th": "สัญญาณไฟจราจรที่ชำรุดมักไม่มีใครรู้จนกว่าจะมีคนแจ้ง กล่องบนเสาไฟพลังงานแสงอาทิตย์นี้ใช้กล้องและ AI ตรวจจับความผิดปกติ แล้วแจ้งช่างผ่านแผนที่และแอปมือถือ"
+    },
+    "facts": [
+      {
+        "label": {
+          "en": "My role",
+          "th": "บทบาท"
+        },
+        "value": {
+          "en": "Data collection, and presenting the project to judges and visitors at the competition booth",
+          "th": "เก็บรวบรวมข้อมูล และนำเสนอผลงานต่อกรรมการและผู้เข้าชมที่บูธการแข่งขัน"
+        }
+      },
+      {
+        "label": {
+          "en": "Built with",
+          "th": "เครื่องมือ"
+        },
+        "value": {
+          "en": "Raspberry Pi, AI accelerator, IP camera, MQTT, 4G",
+          "th": "Raspberry Pi, บอร์ดเร่ง AI, กล้อง IP, MQTT, 4G"
+        }
+      },
+      {
+        "label": {
+          "en": "Result",
+          "th": "ผลลัพธ์"
+        },
+        "value": {
+          "en": "1st place, Innovation & Scientific Invention Contest, vocational level, Eastern Region",
+          "th": "รางวัลชนะเลิศ การประกวดนวัตกรรมและสิ่งประดิษฐ์ทางวิทยาศาสตร์ ระดับอาชีวศึกษา ภาคตะวันออก"
+        }
+      }
+    ]
+  }
+]

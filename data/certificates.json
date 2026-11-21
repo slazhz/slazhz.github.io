@@ -1,0 +1,144 @@
+[
+  {
+    "id": "cs50",
+    "tags": [
+      "programming"
+    ],
+    "image": {
+      "src": "assets/img/cert-cs50.jpg",
+      "width": 1400,
+      "height": 1082,
+      "fit": "contain"
+    },
+    "alt": {
+      "en": "CS50 certificate",
+      "th": "ใบรับรอง CS50"
+    },
+    "title": {
+      "en": "CS50's Introduction to Programming with Python",
+      "th": "CS50's Introduction to Programming with Python"
+    },
+    "meta": {
+      "en": "Harvard University (online) · 2024",
+      "th": "Harvard University (ออนไลน์) · 2567"
+    },
+    "desc": {
+      "en": "Completed nine problem sets and a final project.",
+      "th": "ทำแบบฝึกหัดครบ 9 ชุด และโปรเจกต์จบ 1 ชิ้น"
+    }
+  },
+  {
+    "id": "aiat",
+    "tags": [
+      "ai"
+    ],
+    "image": {
+      "src": "assets/img/cert-aiat.jpg",
+      "width": 1400,
+      "height": 990,
+      "fit": "contain"
+    },
+    "alt": {
+      "en": "AIAT Basic AI certificate",
+      "th": "ใบรับรอง Basic AI สมาคมปัญญาประดิษฐ์ประเทศไทย"
+    },
+    "title": {
+      "en": "SPU AI Prompt Mini Hackathon 2025",
+      "th": "SPU AI Prompt Mini Hackathon 2025"
+    },
+    "meta": {
+      "en": "Artificial Intelligence Association of Thailand · Jul 2025",
+      "th": "สมาคมปัญญาประดิษฐ์ประเทศไทย · 8 ก.ค. 2568"
+    },
+    "desc": {
+      "en": "Passed the Basic AI assessment.",
+      "th": "ผ่านเกณฑ์การประเมินในระดับปัญญาประดิษฐ์ขั้นต้น (Basic AI)"
+    }
+  },
+  {
+    "id": "ncsa",
+    "tags": [
+      "cyber"
+    ],
+    "image": {
+      "src": "assets/img/cert-ncsa.jpg",
+      "width": 1400,
+      "height": 990,
+      "fit": "contain"
+    },
+    "alt": {
+      "en": "Basic Cybersecurity certificate from NCSA Thailand",
+      "th": "ใบรับรองหลักสูตร Basic Cybersecurity จาก สกมช."
+    },
+    "title": {
+      "en": "Basic Cybersecurity",
+      "th": "Basic Cybersecurity"
+    },
+    "meta": {
+      "en": "NCSA Thailand, MOOC cybersecurity learning platform · Sep 2025",
+      "th": "สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช.) · ก.ย. 2568"
+    },
+    "desc": {
+      "en": "Completed the Basic Cybersecurity online course.",
+      "th": "ผ่านหลักสูตรออนไลน์ความมั่นคงปลอดภัยไซเบอร์ขั้นพื้นฐาน"
+    }
+  },
+  {
+    "id": "assets/img/interlink",
+    "tags": [
+      "networking",
+      "iot"
+    ],
+    "image": {
+      "src": "assets/img/interlink.jpg",
+      "width": 1600,
+      "height": 900,
+      "fit": "cover"
+    },
+    "alt": {
+      "en": "Hands-on cabling practice at the Interlink training",
+      "th": "ฝึกเข้าสายแลนในการอบรม Interlink"
+    },
+    "title": {
+      "en": "Networking & cabling training",
+      "th": "อบรมระบบเครือข่ายและสายสัญญาณ"
+    },
+    "meta": {
+      "en": "Interlink · 2026",
+      "th": "Interlink · 2569"
+    },
+    "desc": {
+      "en": "How mobile signals, IoT and AI work; switches, ports, and choosing cable types and specs; fiber optics; and hands-on termination of male and female LAN connectors with the color codes.",
+      "th": "เรียนรู้การทำงานของสัญญาณมือถือ, IoT และ AI รวมถึงสวิตช์ พอร์ต และประเภท/สเปกสายสัญญาณกับการเลือกใช้ อธิบาย Fiber Optic และสาธิตการเข้าหัวสาย LAN ตัวเมียและตัวผู้ พร้อมรหัสสี"
+    }
+  },
+  {
+    "id": "ieee-aiot",
+    "tags": [
+      "ai",
+      "iot"
+    ],
+    "image": {
+      "src": "assets/img/cert-ieee-aiot.jpg",
+      "width": 1400,
+      "height": 788,
+      "fit": "contain"
+    },
+    "alt": {
+      "en": "AI and IoT Competency certificate from the IEEE SMC Thailand Chapter",
+      "th": "ใบรับรองสมรรถนะด้าน AI และ IoT จาก IEEE SMC Thailand Chapter"
+    },
+    "title": {
+      "en": "AI & IoT Competency Development Program",
+      "th": "AI & IoT Competency Development Program"
+    },
+    "meta": {
+      "en": "IEEE SMC Society Thailand Chapter · Sep 2026",
+      "th": "IEEE SMC Society Thailand Chapter · ก.ย. 2569"
+    },
+    "desc": {
+      "en": "34-hour program covering AI, generative AI, machine and deep learning, IoT, AI–IoT integration and responsible AI.",
+      "th": "หลักสูตร 34 ชั่วโมง ครอบคลุม AI, Generative AI, Machine Learning, Deep Learning, IoT, การเชื่อมต่อ AI กับ IoT และ AI อย่างมีความรับผิดชอบ"
+    }
+  }
+]
