@@ -279,7 +279,7 @@ html[lang="th"] .award h3 { line-height: 1.5; }
 .training img.cover { object-fit: cover; }
 .training strong { font-size: 16px; line-height: 1.35; }
 .training .mono { font-size: 13px; color: var(--muted); }
-.training span:last-child { font-size: 14px; line-height: 1.5; color: var(--text-2); }
+.training span:not(.mono) { font-size: 14px; line-height: 1.5; color: var(--text-2); }   /* the description, even when a link follows it */
 
 /* ---------- Gallery ---------- */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }

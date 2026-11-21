@@ -25,6 +25,13 @@
     "desc": {
       "en": "Completed nine problem sets and a final project.",
       "th": "ทำแบบฝึกหัดครบ 9 ชุด และโปรเจกต์จบ 1 ชิ้น"
+    },
+    "link": {
+      "url": "https://cs50.harvard.edu/certificates/23bdf2c6-bb30-42b3-ad90-2068db36b7ac",
+      "label": {
+        "en": "Verify on cs50.harvard.edu",
+        "th": "ตรวจสอบที่ cs50.harvard.edu"
+      }
     }
   },
   {
@@ -79,12 +86,12 @@
       "th": "สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช.) · ก.ย. 2568"
     },
     "desc": {
-      "en": "Completed the Basic Cybersecurity online course.",
-      "th": "ผ่านหลักสูตรออนไลน์ความมั่นคงปลอดภัยไซเบอร์ขั้นพื้นฐาน"
+      "en": "Completed the Basic Cybersecurity online course. Certificate ID: SPG-0UZN24JBES336.",
+      "th": "ผ่านหลักสูตรออนไลน์ความมั่นคงปลอดภัยไซเบอร์ขั้นพื้นฐาน รหัสใบรับรอง: SPG-0UZN24JBES336"
     }
   },
   {
-    "id": "assets/img/interlink",
+    "id": "interlink",
     "tags": [
       "networking",
       "iot"
@@ -108,8 +115,8 @@
       "th": "Interlink · 2569"
     },
     "desc": {
-      "en": "How mobile signals, IoT and AI work; switches, ports, and choosing cable types and specs; fiber optics; and hands-on termination of male and female LAN connectors with the color codes.",
-      "th": "เรียนรู้การทำงานของสัญญาณมือถือ, IoT และ AI รวมถึงสวิตช์ พอร์ต และประเภท/สเปกสายสัญญาณกับการเลือกใช้ อธิบาย Fiber Optic และสาธิตการเข้าหัวสาย LAN ตัวเมียและตัวผู้ พร้อมรหัสสี"
+      "en": "How mobile signals, IoT and AI work; switches, ports, and choosing cable types and specs; fiber optics; and hands-on termination of male and female LAN connectors with the color codes. (Photo from the training session.)",
+      "th": "เรียนรู้การทำงานของสัญญาณมือถือ, IoT และ AI รวมถึงสวิตช์ พอร์ต และประเภท/สเปกสายสัญญาณกับการเลือกใช้ อธิบาย Fiber Optic และสาธิตการเข้าหัวสาย LAN ตัวเมียและตัวผู้ พร้อมรหัสสี (ภาพจากการอบรม)"
     }
   },
   {
@@ -137,8 +144,8 @@
       "th": "IEEE SMC Society Thailand Chapter · ก.ย. 2569"
     },
     "desc": {
-      "en": "34-hour program covering AI, generative AI, machine and deep learning, IoT, AI–IoT integration and responsible AI.",
-      "th": "หลักสูตร 34 ชั่วโมง ครอบคลุม AI, Generative AI, Machine Learning, Deep Learning, IoT, การเชื่อมต่อ AI กับ IoT และ AI อย่างมีความรับผิดชอบ"
+      "en": "34-hour program covering AI, generative AI, machine and deep learning, IoT, AI–IoT integration and responsible AI. Certificate No. CERT-2026-00061.",
+      "th": "หลักสูตร 34 ชั่วโมง ครอบคลุม AI, Generative AI, Machine Learning, Deep Learning, IoT, การเชื่อมต่อ AI กับ IoT และ AI อย่างมีความรับผิดชอบ เลขที่ใบรับรอง: CERT-2026-00061"
     }
   }
 ]

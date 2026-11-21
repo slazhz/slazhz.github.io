@@ -49,6 +49,10 @@ for (const c of certificates) {
   image(c.image, w); need(['contain', 'cover'].includes(c.image?.fit), `${w}: image.fit must be contain or cover`);
   need(Array.isArray(c.tags), `${w}: tags must be a list`);
   ['alt', 'title', 'meta', 'desc'].forEach((k) => text(c[k], `${w} ${k}`));
+  if (c.link) {   // optional verification link, e.g. the issuer's certificate page
+    need(typeof c.link.url === 'string' && /^https:\/\/[^\s"<>]+$/.test(c.link.url), `${w}: link.url must be an https:// address`);
+    text(c.link.label, `${w} link label`);
+  }
 }
 for (const c of competitions) {
   const w = `competition "${c.id}"`;
@@ -79,7 +83,7 @@ const certificateHtml = (c, lang, pre) => `<div class="training" data-tags="${at
   <img class="${c.image.fit}" src="${pre}${attr(c.image.src)}" width="${c.image.width}" height="${c.image.height}" loading="lazy" decoding="async" alt="${attr(c.alt[lang])}">
   <strong>${esc(c.title[lang])}</strong>
   <span class="mono">${esc(c.meta[lang])}</span>
-  <span>${esc(c.desc[lang])}</span>
+  <span>${esc(c.desc[lang])}</span>${c.link ? `\n  <a class="award-link" href="${attr(c.link.url)}" rel="noopener noreferrer">${esc(c.link.label[lang])}</a>` : ''}
 </div>`;
 
 const competitionHtml = (c, lang, pre) => `<div class="card award">

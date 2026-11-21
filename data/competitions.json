@@ -45,16 +45,16 @@
       "th": "ทีมรับรางวัลรองชนะเลิศอันดับ 1 การแข่งขันทักษะวิชาชีพ"
     },
     "when": {
-      "en": "1st runner-up · 2026",
-      "th": "รองชนะเลิศอันดับ 1 · ปีการศึกษา 2569"
+      "en": "1st runner-up · 9 Nov 2026",
+      "th": "รองชนะเลิศอันดับ 1 · 9 พ.ย. 2569"
     },
     "title": {
       "en": "Provincial Vocational Skills Competition",
       "th": "การแข่งขันทักษะวิชาชีพ ระดับจังหวัด"
     },
     "desc": {
-      "en": "IT programming and networking with DevOps. Held at Chonburi Technical College. I built the back end and a Docker Compose setup for GitLab.",
-      "th": "ทักษะเทคโนโลยีสารสนเทศด้านโปรแกรมและเครือข่ายด้วยกระบวนการ DevOps ณ วิทยาลัยเทคนิคชลบุรี รับผิดชอบพัฒนา Back-End และ Docker Compose สำหรับ GitLab"
+      "en": "IT programming and networking with DevOps. Held at Chonburi Technical College. My part: the back end and a Docker Compose setup for the team's GitLab.",
+      "th": "ทักษะเทคโนโลยีสารสนเทศด้านโปรแกรมและเครือข่ายด้วยกระบวนการ DevOps ณ วิทยาลัยเทคนิคชลบุรี ส่วนที่ผมรับผิดชอบ: พัฒนา Back-End และ Docker Compose สำหรับ GitLab ของทีม"
     },
     "link": {
       "url": "https://www.facebook.com/story.php?story_fbid=1732654875536759&id=100063767881647",
