@@ -41,7 +41,7 @@
       <a href="#contact">ติดต่อ</a>
     </nav>
     <div class="lang" aria-label="ภาษา">
-      <a href="../" lang="en" hreflang="en">EN</a>
+      <a href="../" lang="en" hreflang="en" title="Switch to English">EN</a>
       <span aria-current="true">ไทย</span>
     </div>
   </div>
@@ -270,31 +270,31 @@
     <div class="card" style="display: flex; flex-direction: column; gap: 12px">
       <h3 class="h3" style="font-size: 20px">การอบรมและใบรับรอง</h3>
       <div class="trainings">
-        <div class="training">
+        <div class="training" data-tags="programming">
           <img class="contain" src="../assets/img/cert-cs50.jpg" width="1400" height="1082" loading="lazy" decoding="async" alt="ใบรับรอง CS50">
           <strong>CS50's Introduction to Programming with Python</strong>
           <span class="mono">Harvard University (ออนไลน์) · 2567</span>
           <span>ทำแบบฝึกหัดครบ 9 ชุด และโปรเจกต์จบ 1 ชิ้น</span>
         </div>
-        <div class="training">
+        <div class="training" data-tags="ai">
           <img class="contain" src="../assets/img/cert-aiat.jpg" width="1400" height="990" loading="lazy" decoding="async" alt="ใบรับรอง Basic AI สมาคมปัญญาประดิษฐ์ประเทศไทย">
           <strong>SPU AI Prompt Mini Hackathon 2025</strong>
           <span class="mono">สมาคมปัญญาประดิษฐ์ประเทศไทย · 8 ก.ค. 2568</span>
           <span>ผ่านเกณฑ์การประเมินในระดับปัญญาประดิษฐ์ขั้นต้น (Basic AI)</span>
         </div>
-        <div class="training">
+        <div class="training" data-tags="cyber">
           <img class="contain" src="../assets/img/cert-ncsa.jpg" width="1400" height="990" loading="lazy" decoding="async" alt="ใบรับรองหลักสูตร Basic Cybersecurity จาก สกมช.">
           <strong>Basic Cybersecurity</strong>
           <span class="mono">สำนักงานคณะกรรมการการรักษาความมั่นคงปลอดภัยไซเบอร์แห่งชาติ (สกมช.) · ก.ย. 2568</span>
           <span>ผ่านหลักสูตรออนไลน์ความมั่นคงปลอดภัยไซเบอร์ขั้นพื้นฐาน</span>
         </div>
-        <div class="training">
+        <div class="training" data-tags="networking iot">
           <img class="cover" src="../assets/img/interlink.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="ฝึกเข้าสายแลนในการอบรม Interlink">
           <strong>อบรมระบบเครือข่ายและสายสัญญาณ</strong>
           <span class="mono">Interlink · 2569</span>
           <span>เรียนรู้การทำงานของสัญญาณมือถือ, IoT และ AI รวมถึงสวิตช์ พอร์ต และประเภท/สเปกสายสัญญาณกับการเลือกใช้ อธิบาย Fiber Optic และสาธิตการเข้าหัวสาย LAN ตัวเมียและตัวผู้ พร้อมรหัสสี</span>
         </div>
-        <div class="training">
+        <div class="training" data-tags="ai iot">
           <img class="contain" src="../assets/img/cert-ieee-aiot.jpg" width="1400" height="788" loading="lazy" decoding="async" alt="ใบรับรองสมรรถนะด้าน AI และ IoT จาก IEEE SMC Thailand Chapter">
           <strong>AI &amp; IoT Competency Development Program</strong>
           <span class="mono">IEEE SMC Society Thailand Chapter · ก.ย. 2569</span>
@@ -343,7 +343,9 @@
 </main>
 
 <dialog id="lightbox" class="lightbox" aria-label="รูปภาพ">
-  <button type="button">ปิด</button>
+  <button type="button" class="lb-close">ปิด</button>
+  <button type="button" class="lb-prev" aria-label="ก่อนหน้า">&lsaquo;</button>
+  <button type="button" class="lb-next" aria-label="ถัดไป">&rsaquo;</button>
   <img alt="">
   <p></p>
 </dialog>
