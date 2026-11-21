@@ -134,12 +134,12 @@
 
     // Certificates (training list and competition cards). Filtered-out ones are skipped.
     var certList = function () {
-      return [].slice.call(document.querySelectorAll('.training:not([hidden]) img, .award img')).map(function (im) {
-        var card = im.closest('.training, .award'), t = card.querySelector('strong, h3');
+      return [].slice.call(document.querySelectorAll('img.cert, .training:not([hidden]) img, .award img')).map(function (im) {
+        var card = im.closest('.training, .award, .xp'), t = card.querySelector('strong, h3');
         return { el: im, src: im.currentSrc || im.src, alt: im.alt, cap: t ? t.textContent : '' };
       });
     };
-    document.querySelectorAll('.training img, .award img').forEach(function (im) {
+    document.querySelectorAll('img.cert, .training img, .award img').forEach(function (im) {
       im.setAttribute('data-zoom', '');
       im.tabIndex = 0;
       im.setAttribute('role', 'button');
