@@ -157,6 +157,8 @@ html[lang="th"] .hero-title { font-weight: 700; line-height: 1.25; }
 }
 .stat-n.hi { color: var(--blue-ink); }
 .stat-l { font-size: 14px; color: var(--muted); margin-top: 8px; line-height: 1.45; }
+.steam-meta { margin: 6px 0 0; font-family: var(--font-mono); font-size: 12px; line-height: 1.5; color: var(--muted); }
+.steam-meta:empty { display: none; }
 .live-dot {
   display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; vertical-align: middle;
   background: #1E9E5A; box-shadow: 0 0 0 4px rgba(30, 158, 90, .16);

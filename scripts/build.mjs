@@ -96,7 +96,7 @@ const projectHtml = (p, lang, pre) => {
   const tags = (p.tags || []).map((t) => `<span class="tag${t.award ? ' tag--award' : ''}">${esc(t.text[lang])}</span>`).join('');
   const facts = (p.facts || []).map((f) => `      <dt>${esc(f.label[lang])}</dt><dd>${esc(f.value[lang])}</dd>`).join('\n');
   const stats = p.stats?.length
-    ? `\n    <div class="mini-stats">\n${p.stats.map((s) => `      <div><div class="stat-n" data-steam="${attr(s.steam)}">—</div><div class="stat-l">${esc(s.label[lang])}</div></div>`).join('\n')}\n    </div>`
+    ? `\n    <div class="mini-stats">\n${p.stats.map((s) => `      <div><div class="stat-n" data-steam="${attr(s.steam)}">—</div><div class="stat-l">${esc(s.label[lang])}</div></div>`).join('\n')}\n    </div>\n    <p class="steam-meta" data-steam-meta></p>`
     : '';
   const actions = p.actions?.length
     ? `\n    <div class="actions">\n${p.actions.map((a) => `      <a class="btn ${a.primary ? 'btn-primary' : 'btn-ghost'}" href="${attr(a.href)}">${esc(a.label[lang])}</a>`).join('\n')}\n    </div>`

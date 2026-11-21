@@ -24,6 +24,32 @@
     });
     io.observe(el);
   }
+  // "Last change: 3 hours ago" and "+N new subscribers this week". The file only changes when a
+  // number changes, so this says "last change", not "live". Nothing is shown if the data is missing.
+  function ago(iso) {
+    var secs = (Date.now() - new Date(iso).getTime()) / 1000;
+    if (!(secs >= 0) || typeof Intl === 'undefined' || !Intl.RelativeTimeFormat) return '';
+    var rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
+    if (secs < 3600) return rtf.format(-Math.max(1, Math.round(secs / 60)), 'minute');
+    if (secs < 48 * 3600) return rtf.format(-Math.round(secs / 3600), 'hour');
+    return rtf.format(-Math.round(secs / 86400), 'day');
+  }
+  function newThisWeek(data, history) {
+    // lifetime_subscriptions only goes up, so this can't hide people who unsubscribed
+    if (!Array.isArray(history) || typeof data.lifetime_subscriptions !== 'number') return 0;
+    var weekAgo = Date.now() - 7 * 86400000, base = null;
+    history.forEach(function (p) {
+      if (new Date(p.t).getTime() <= weekAgo && typeof p.lifetime_subscriptions === 'number') base = p;
+    });
+    return base ? data.lifetime_subscriptions - base.lifetime_subscriptions : 0;
+  }
+  function showMeta(data, history) {
+    var parts = [], n = newThisWeek(data, history), when = data.updated ? ago(data.updated) : '';
+    if (n > 0) parts.push(lang === 'th' ? 'สมาชิกใหม่ +' + n.toLocaleString(locale) + ' ใน 7 วันที่ผ่านมา' : '+' + n.toLocaleString(locale) + ' new subscribers this week');
+    if (when) parts.push((lang === 'th' ? 'เปลี่ยนล่าสุด ' : 'Last change: ') + when);
+    document.querySelectorAll('[data-steam-meta]').forEach(function (el) { el.textContent = parts.join(' · '); });
+  }
+
   var fields = document.querySelectorAll('[data-steam]');
   if (fields.length) {
     fetch(new URL('data/steam.json', root), { cache: 'no-cache' })
@@ -34,6 +60,11 @@
           var v = data[el.getAttribute('data-steam')];
           if (typeof v === 'number') countUp(el, v);
         });
+        showMeta(data, null);
+        return fetch(new URL('data/steam-history.json', root), { cache: 'no-cache' })
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (history) { if (history) showMeta(data, history); })
+          .catch(function () { /* the trend is optional */ });
       })
       .catch(function () { /* keep the fallback text */ });
   }

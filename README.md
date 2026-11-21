@@ -19,9 +19,10 @@ Live at **https://slazhz.github.io**
 | `scripts/build.mjs` | Turns the `data/*.json` files into the HTML on both pages |
 | `scripts/add-item.mjs` | Adds a certificate or competition to the data (used by the "Add item" form) |
 | `.github/workflows/add-item.yml` | The "Add item" form (Actions tab). Only you can run it |
-| `data/steam.json` | Steam Workshop numbers, refreshed daily |
+| `data/steam.json` | Steam Workshop numbers, refreshed hourly |
+| `data/steam-history.json` | One point each time a number changed. Used for "+N new subscribers this week" |
 | `scripts/update-steam.mjs` | Fetches the Steam numbers (run by GitHub Actions) |
-| `setup/update-steam-stats.yml` | The daily workflow. Move it into place (see below) |
+| `.github/workflows/update-steam-stats.yml` | The hourly Steam job |
 
 ## Publish it (first time)
 
@@ -29,13 +30,15 @@ Live at **https://slazhz.github.io**
 2. **Check Pages is on.** On github.com: repo → *Settings → Pages* → Source: *Deploy from a branch*, Branch: `main`, folder `/ (root)` → *Save*.
 3. After a minute or two the site is at https://slazhz.github.io.
 
-## Turn on the daily Steam numbers
+## The hourly Steam numbers
 
-1. Make a folder `.github`, inside it a folder `workflows`, and move `setup/update-steam-stats.yml` into it, so the path is `.github/workflows/update-steam-stats.yml`.
-2. Commit and push.
-3. On github.com: *Actions → Update Steam stats → Run workflow* to fill the numbers straight away. After that it runs every morning on its own.
+The job in `.github/workflows/update-steam-stats.yml` runs every hour (GitHub can start it a few minutes late) and fetches the visualizer's public Steam Workshop numbers. It only commits when a number actually changed, so the repo history stays quiet.
 
-Until it has run once, the page shows "Live" and "—" in place of the numbers.
+- **On the page:** the numbers count up, with "Last change: 3 hours ago" under them (it says *last change*, not *live*, because the file only changes when a number does) and, once a week of history exists, "+N new subscribers this week". That trend uses lifetime subscribers, which never go down, so it can't hide people who unsubscribed.
+- **Run it now:** *Actions → Update Steam stats → Run workflow*.
+- **If it ever stops:** GitHub pauses scheduled jobs in a repo with no activity for 60 days. If the numbers never change for that long, open the Actions tab and re-enable it, or run it once by hand.
+
+Until it has run, the page shows "Live" and "—" in place of the numbers.
 
 ## Add a certificate or competition (from your phone or computer)
 

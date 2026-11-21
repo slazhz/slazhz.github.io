@@ -1,11 +1,17 @@
-# Move this file to .github/workflows/update-steam-stats.yml (see README).
-# Every day it refreshes data/steam.json with the visualizer's Steam Workshop numbers.
+# Every hour it refreshes data/steam.json (and data/steam-history.json) with the
+# visualizer's Steam Workshop numbers. It only commits when a number changed.
+# GitHub may start scheduled runs a few minutes late; that is normal.
 name: Update Steam stats
 
 on:
   schedule:
-    - cron: '17 1 * * *'   # every day at 01:17 UTC (08:17 in Thailand)
+    - cron: '17 * * * *'   # every hour at minute 17
   workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+# Same group as the "Add item" form, so the two never push at the same moment.
+concurrency:
+  group: site-content
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -21,12 +27,13 @@ jobs:
       - run: node scripts/update-steam.mjs
       - name: Commit if the numbers changed
         run: |
-          if git diff --quiet data/steam.json; then
+          if git diff --quiet data/steam.json data/steam-history.json && [ -z "$(git ls-files --others --exclude-standard data/steam-history.json)" ]; then
             echo "Nothing to commit"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add data/steam.json
+            git add data/steam.json data/steam-history.json
             git commit -m "Update Steam stats"
+            git pull --rebase
             git push
           fi
