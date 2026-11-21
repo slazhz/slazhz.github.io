@@ -1,0 +1,85 @@
+# Owner-only "Add item" form: adds a certificate or competition to both the English
+# and Thai pages. Only people with write access to the repo can run it (Actions tab).
+# Upload the image to assets/img/ first (github.com -> assets/img -> Add file -> Upload files).
+name: Add item
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'What are you adding?'
+        required: true
+        type: choice
+        options: [certificate, competition]
+      id:
+        description: 'Short id: lowercase letters, numbers, dashes (e.g. ieee-aiot)'
+        required: true
+      image:
+        description: 'Image file already in assets/img/ (e.g. cert-ieee-aiot.jpg, .jpg or .png)'
+        required: true
+      tags:
+        description: 'Certificates only. Any of: ai iot cyber networking programming (space-separated)'
+        required: false
+        default: ''
+      title_en:
+        description: 'Title (English)'
+        required: true
+      title_th:
+        description: 'Title (Thai)'
+        required: true
+      meta_en:
+        description: 'English: certificate "Issuer · Month Year", competition "Result · Month Year"'
+        required: true
+      meta_th:
+        description: 'Thai: same line in Thai (e.g. "IEEE SMC · ก.ย. 2569")'
+        required: true
+      desc_en:
+        description: 'Description (English, one or two sentences)'
+        required: true
+      desc_th:
+        description: 'Description (Thai, one or two sentences)'
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-content
+  cancel-in-progress: false
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # Form values go in through env vars, never pasted into the shell command, so quotes or
+      # symbols in your text can't break (or hijack) the step.
+      - name: Add the item
+        env:
+          INPUT_TYPE: ${{ inputs.type }}
+          INPUT_ID: ${{ inputs.id }}
+          INPUT_IMAGE: ${{ inputs.image }}
+          INPUT_TAGS: ${{ inputs.tags }}
+          INPUT_TITLE_EN: ${{ inputs.title_en }}
+          INPUT_TITLE_TH: ${{ inputs.title_th }}
+          INPUT_META_EN: ${{ inputs.meta_en }}
+          INPUT_META_TH: ${{ inputs.meta_th }}
+          INPUT_DESC_EN: ${{ inputs.desc_en }}
+          INPUT_DESC_TH: ${{ inputs.desc_th }}
+        run: node scripts/add-item.mjs
+      - name: Rebuild both pages
+        run: node scripts/build.mjs
+      - name: Commit and publish
+        env:
+          ITEM_TYPE: ${{ inputs.type }}
+          ITEM_ID: ${{ inputs.id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data index.html th/index.html
+          git commit -m "Add $ITEM_TYPE: $ITEM_ID"
+          git pull --rebase
+          git push
