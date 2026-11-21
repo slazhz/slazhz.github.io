@@ -54,6 +54,10 @@ for (const c of competitions) {
   const w = `competition "${c.id}"`;
   image(c.image, w); need(['contain', 'cover'].includes(c.image?.fit), `${w}: image.fit must be contain or cover`);
   ['alt', 'when', 'title', 'desc'].forEach((k) => text(c[k], `${w} ${k}`));
+  if (c.link) {   // optional evidence link, e.g. the organizer's results page
+    need(typeof c.link.url === 'string' && /^https:\/\/[^\s"<>]+$/.test(c.link.url), `${w}: link.url must be an https:// address`);
+    text(c.link.label, `${w} link label`);
+  }
 }
 for (const p of projects) {
   const w = `project "${p.id}"`;
@@ -82,7 +86,7 @@ const competitionHtml = (c, lang, pre) => `<div class="card award">
   <img class="${c.image.fit}" src="${pre}${attr(c.image.src)}" width="${c.image.width}" height="${c.image.height}" loading="lazy" decoding="async" alt="${attr(c.alt[lang])}"${c.image.style ? ` style="${attr(c.image.style)}"` : ''}>
   <span class="award-when">${esc(c.when[lang])}</span>
   <h3>${esc(c.title[lang])}</h3>
-  <p>${esc(c.desc[lang])}</p>
+  <p>${esc(c.desc[lang])}</p>${c.link ? `\n  <a class="award-link" href="${attr(c.link.url)}" rel="noopener noreferrer">${esc(c.link.label[lang])}</a>` : ''}
 </div>`;
 
 const mediaImg = (m, lang, pre) =>
