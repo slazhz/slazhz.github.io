@@ -55,6 +55,13 @@
     "desc": {
       "en": "IT programming and networking with DevOps. Held at Chonburi Technical College. I built the back end and a Docker Compose setup for GitLab.",
       "th": "ทักษะเทคโนโลยีสารสนเทศด้านโปรแกรมและเครือข่ายด้วยกระบวนการ DevOps ณ วิทยาลัยเทคนิคชลบุรี รับผิดชอบพัฒนา Back-End และ Docker Compose สำหรับ GitLab"
+    },
+    "link": {
+      "url": "https://www.facebook.com/story.php?story_fbid=1732654875536759&id=100063767881647",
+      "label": {
+        "en": "Competition announcement (Facebook)",
+        "th": "ประกาศการแข่งขัน (Facebook)"
+      }
     }
   },
   {
