@@ -59,7 +59,17 @@
       else parts.push('+' + num + ' new subscribers ' + (grew.week ? 'this week' : 'since ' + day));
     }
     if (when) parts.push((lang === 'th' ? 'เปลี่ยนล่าสุด ' : 'Last change: ') + when);
-    document.querySelectorAll('[data-steam-meta]').forEach(function (el) { el.textContent = parts.join(' · '); });
+    // One line per fact (growth first, then last change) so the narrow hero card doesn't wrap them together.
+    // The hero strip is a summary: data-steam-meta="brief" shows just the first line there.
+    document.querySelectorAll('[data-steam-meta]').forEach(function (el) {
+      el.textContent = '';
+      (el.getAttribute('data-steam-meta') === 'brief' ? parts.slice(0, 1) : parts).forEach(function (text, i) {
+        var line = document.createElement('span');
+        line.textContent = text;
+        if (grew && i === 0) line.className = 'steam-meta__trend';
+        el.appendChild(line);
+      });
+    });
   }
 
   var fields = document.querySelectorAll('[data-steam]');
